@@ -1,5 +1,3 @@
-Physioboard is an open-source project under the MIT license. 
-
 Physioboard is an iOS universal app (meaning that it works on all iPhone/iPad/iPod touch 
 with iOS 4.3.3 or above). Physioboard demonstrates the possibility of using an iOS 
 device to view "real-time" physiological data (i.e., skin conductance, heart rate...etc).
@@ -10,6 +8,14 @@ However, this project shows the basic function (well, at least, for the real-tim
 it is still in the prototype stage. I hope this solution can shed some lights on streaming 
 real-time physiological data to iPhone/iPad/iPod touch in order to inspire more usages of
 physiological data.
+
+-- 
+Jackie Lee
+Aug. 5, 2011
+
+
+
+Physioboard is an open-source project under the MIT license. 
 
 Copyright (c) 2011 by Jackie Lee, Affective Computing Group, MIT Media Laboratory
 
