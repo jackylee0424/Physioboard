@@ -1,11 +1,3 @@
-Attention Meter
-
-Jackie Lee
-Affective Computing Group
-MIT Media Lab
-
-This is a python-/flash-based face detector.
-=======
 Physioboard is an iOS universal app (meaning that it works on all iPhone/iPad/iPod touch 
 with iOS 4.3.3 or above). Physioboard demonstrates the possibility of using an iOS 
 device to view "real-time" physiological data (i.e., skin conductance, heart rate...etc).
