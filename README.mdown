@@ -13,6 +13,8 @@ real-time physiological data.
 
 [![](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-screenshot.jpg)](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-screenshot.jpg)
 
+* This screenshot shows a demo app that displays two simultaneous inputs of data.
+
 
 How it works
 ============
