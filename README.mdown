@@ -20,10 +20,10 @@ How it works
 Physioboard consists of three major parts:
 
 * Collector: 
-This is data collection client. You may start from doing $python simple.py (before you do it, make sure your server is up and running). Collector may be extended with other data capturing devices such as sensors. Currently, I have Python scripts that are able to upload the data streams from iCalm and Affectiva Q sensor. However, you should be able to incorperate other kinds of sensors and make good use of them. 
+This is data collection client. You may start from doing $python simple.py (before you do it, make sure your server is up and running). Collector may be extended with other data capturing devices such as sensors. I've try uploading the data streams from iCalm and Affectiva Q sensor (python scripts are not available at this point). However, you should be able to incorperate other kinds of sensors. 
 
 * Server:
-You need a server to receive and host data requests. I use Tornado Web Server (because I love Python and it also supports Websocket protocol). There are many thing you can do on the server end. For example, you can do data processing on server end.
+You need a server to receive and host data requests. I use Tornado Web Server (because I love Python and it also supports Websocket protocol). There are many thing you can do on the server end. For example, you can do data processing on server end. 
 
 * Spectator:
 This is the exciting part, the Spectator. All iOS devices can be Spectators after they install this app. I use PhoneGap + some WebSocket tricks to receive the data stream. It is relatively fast in real time. Try it to feel the power of real-time data.
