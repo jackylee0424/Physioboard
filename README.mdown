@@ -13,6 +13,7 @@ real-time physiological data.
 
 [![](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-screenshot.jpg)](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-screenshot.jpg)
 
+
 How it works
 ============
 [![](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-diagram.jpg)](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-diagram.jpg)
@@ -27,6 +28,20 @@ You need a server to receive and host data requests. I use Tornado Web Server (b
 
 * Spectator:
 This is the exciting part, the Spectator. All iOS devices can be Spectators after they install this app. I use PhoneGap + some WebSocket tricks to receive the data stream. It is relatively fast in real time. Try it to feel the power of real-time data.
+
+
+Installation
+=============
+1. A Mac with latest Xcode installed.
+2. An iOS developer account (optional if you only want to test it using simulator)
+3. Run the Tornado Web Server (on port 80) $ sudo python Server/server.py
+4. Run the Collector script $ python simple.py
+5. Build and run the iOS project. Have fun!
+
+
+Note
+=============
+* Some WiFi environment (e.g., MIT campus) blocks the default WebSocket port. That's the reason that I use port 80.
 
 -- 
 Jackie Lee
