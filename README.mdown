@@ -11,6 +11,10 @@ it is still in the prototype stage. I hope this solution can shed some lights on
 real-time physiological data to iPhone/iPad/iPod touch in order to inspire more usages of
 physiological data.
 
+How it works
+============
+[![](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-diagram.png)](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-diagram.png)
+
 -- 
 Jackie Lee
 jackylee@media.mit.edu
