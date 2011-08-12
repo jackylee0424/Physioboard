@@ -13,7 +13,7 @@ physiological data.
 
 How it works
 ============
-[![](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-diagram.png)](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-diagram.png)
+[![](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-diagram.jpg)](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-diagram.jpg)
 
 -- 
 Jackie Lee
