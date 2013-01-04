@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+
+    <title>Physioboard</title>
+    <link href="css/layout.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+    <script language="javascript" type="text/javascript" charset="utf-8" src="js/jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" charset="utf-8" src="js/jquery.flot.crosshair.js"></script>
+    <script language="javascript" type="text/javascript" charset="utf-8" src="js/jquery.flot.resize.js"></script>
+	<script language="javascript" type="text/javascript" charset="utf-8" src="js/phonegap.0.9.5.1.min.js"></script>
+    <script language="javascript" type="text/javascript" charset="utf-8" src="js/websocket.js"></script>
+    <script language="javascript" type="text/javascript" charset="utf-8" src="js/analysis.js"></script>
+   
+    <style type="text/css">
+          html, body {
+            margin-left:50px;
+            height: 100%; /* make the percentage height on placeholder work */
+          }
+    </style>
+  </head>
+  <body onload="onBodyLoad()">
+	  <center><h2>Interpersonal Affect</h2></center>
+      <img id="person_left" src="image/person_male_b1.png" height=90 style="position:absolute;left:15%;top:90px" >
+      <img id="person_right" src="image/person_female_b1.png" height=90 style="position:absolute;right:12%;top:90px" />
+      <div id="placeholder" style="width:95%;height:500px;top:100px"></div>
+      <br><br><br><br><br>Skin Conductance concordance<br>
+      <div id="corr_r">0</div>
+      <script type="text/javascript">
+              
+              // First, make sure you run your server on localhost:80
+              // Second, activate your collector python script (i.e., simple.py)
+              // Finally, run this app.
+          
+              // This ipad app should work fine if you run it on iPad 4.3 Simulator and connect to your localhost.
+              // To run it on the device, you need to change to a real ip, not localhost
+          
+              var ws = new WebSocket("ws://localhost:80/websocket");
+              var tempX;
+              var tempY;
+              var ch_id = 100; // for physioboard, you need to specify the same channel to receive data.
+              var r_data;
+              var py1=0;
+              var py2=0;
+          
+              ws.onopen = function() {
+                  // send some testing data after websocket is opened
+                  ws.send('{"ch_id":'+ch_id+',"uid":"physioboard","x":1,"y":1.2}');
+              };
+          
+              ws.onmessage = function (evt) {
+                  r_data = JSON.parse(evt.data);
+                  
+                  // you need to specify the uid to plot the data
+                  if (r_data["body"].uid=="simple1"){
+                      py1=r_data["body"].y;
+                  }
+                  
+                  if (r_data["body"].uid=="simple2"){
+                      py2=r_data["body"].y;
+                  }
+              }
+              
+              $(function () {
+                
+                var data =[], totalPoints = 1000;
+                var data2=[],
+                
+                function getPhysioData() {
+                
+                    if (data.length > 0)
+                        data = data.slice(1);
+                    
+                    while (data.length < totalPoints) {
+                        var y=py1;
+                        data.push(y);
+                    }
+                    
+                    var res = [];
+                    for (var i = 0; i < data.length; ++i)
+                        res.push([i, data[i]])
+                    return res;
+                }                
+                
+                function getSecondPhysioData() {
+                    if (data2.length > 0)
+                        data2 = data2.slice(1);
+                
+                    
+                    while (data2.length < totalPoints) {
+                        var y2=py2;
+                        data2.push(y2);
+                    }
+                    
+                    var res = [];
+                    for (var i = 0; i < data2.length; ++i)
+                        res.push([i, data2[i]])
+                    return res;
+                
+                }
+
+                // setup update interval in ms
+                var updateInterval = 50;
+                
+                // setup plot
+                var options = {
+                    series: { shadowSize: 0 },
+                    yaxis: { min: 0, max: 8 },
+                    xaxis: { show: false },
+                    crosshair: { mode: "y" },
+                    grid: { hoverable: false, autoHighlight: false }
+                };
+
+                var plot = $.plot($("#placeholder"), [ getPhysioData(),getSecondPhysioData()], options);
+
+                function update() {
+                    
+                    plot.setData([ getPhysioData(),getSecondPhysioData()]);
+                    
+                    plot.draw();
+                    var cor = 0;
+                    if (py1*py2!=0){
+                        cor = jQuery.corr_coeff(data.slice(800,999),data2.slice(800,999));
+                        if (cor<0){cor=cor*-1;}
+                        if (cor>0){
+                            document.getElementById("corr_r").innerText=("Pearson's correlation coefficient: "+String(cor).substring(0,4));
+                            document.getElementById("person_left").style.left=15+cor*28+"%";
+                            document.getElementById("person_right").style.right=12+cor*27+"%";
+                        }
+                    }else{
+                        document.getElementById("corr_r").innerText=("Pearson's correlation coefficient: N/A");
+                        document.getElementById("person_left").style.left=15+"%";
+                        document.getElementById("person_right").style.right=12+"%";
+                    }
+                    setTimeout(update, updateInterval);
+                }
+                
+                update();
+              });
+        </script>
+
+  </body>
+</html>
