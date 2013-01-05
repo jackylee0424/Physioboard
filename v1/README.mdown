@@ -11,14 +11,14 @@ It is still at the prototype stage. I hope this solution can shed some lights on
 real-time physiological data to iPhone/iPad in order to inspire more usages of
 real-time physiological data.
 
-[![](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-screenshot.jpg)](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-screenshot.jpg)
+[![](https://github.com/jackylee0424/Physioboard/raw/master/v1/physioboard-screenshot.jpg)](https://github.com/jackylee0424/Physioboard/raw/master/v1/physioboard-screenshot.jpg)
 
 * This screenshot shows a demo app that displays two simultaneous inputs of data.
 
 
 How it works
 ============
-[![](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-diagram.jpg)](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-diagram.jpg)
+[![](https://github.com/jackylee0424/Physioboard/raw/master/v1/physioboard-diagram.jpg)](https://github.com/jackylee0424/Physioboard/raw/master/v1/physioboard-diagram.jpg)
 
 Physioboard consists of three major parts:
 
