@@ -16,5 +16,5 @@ real-time physiological data to iPhone/iPad in order to inspire more usages of
 real-time physiological data. 
 
 -- 
-Jackie Lee
+Jackie Chia-Hsun Lee
 jackylee@media.mit.edu

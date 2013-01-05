@@ -1,6 +1,6 @@
-Physioboard
+Physioboard v1
 ============
-Physioboard is an iOS universal app (meaning that it works on all iPhone/iPad/iPod touch 
+Physioboard (v1) is an iOS universal app (meaning that it works on all iPhone/iPad/iPod touch 
 with iOS 4.3.3 or above). Physioboard demonstrates the possibility of using an iOS 
 device to view "real-time" physiological data (i.e., skin conductance, heart rate...etc).
 I put together a solution using the Python Tornado Web Server (http://www.tornadoweb.org/) with
