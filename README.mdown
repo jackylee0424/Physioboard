@@ -1,6 +1,10 @@
 Physioboard
 ============
-Physioboard is an iOS universal app (meaning that it works on all iPhone/iPad/iPod touch 
+Physioboard (v2) is coming soon.
+
+
+
+Physioboard (v1) is an iOS universal app (meaning that it works on all iPhone/iPad/iPod touch 
 with iOS 4.3.3 or above). Physioboard demonstrates the possibility of using an iOS 
 device to view "real-time" physiological data (i.e., skin conductance, heart rate...etc).
 I put together a solution using the Python Tornado Web Server (http://www.tornadoweb.org/) with
@@ -9,41 +13,7 @@ PhoneGap (http://www.phonegap.com/) + some WebSocket hacks to display real-time 
 However, this project shows the basic functionality (well, at least, for the real-time data).
 It is still at the prototype stage. I hope this solution can shed some lights on streaming 
 real-time physiological data to iPhone/iPad in order to inspire more usages of
-real-time physiological data.
-
-[![](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-screenshot.jpg)](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-screenshot.jpg)
-
-* This screenshot shows a demo app that displays two simultaneous inputs of data.
-
-
-How it works
-============
-[![](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-diagram.jpg)](https://github.com/jackylee0424/Physioboard/raw/master/physioboard-diagram.jpg)
-
-Physioboard consists of three major parts:
-
-* Collector: 
-This is data collection client. You may start from doing $python simple.py (before you do it, make sure your server is up and running). Collector may be extended with other data capturing devices such as sensors. I've tried uploading the data streams from iCalm and Affectiva Q sensor (python scripts are not available at this point). However, you should be able to incorperate other kinds of sensors. 
-
-* Server:
-You need a server to receive and host data requests. I use Tornado Web Server (because I love Python and it also supports Websocket protocol). There are many thing you can do on the server. For example, you can do image processing, statistics, or other fun stuff on the server side (if you like). 
-
-* Spectator:
-This is the exciting part, the Spectator. All iOS devices can be Spectators after they install this app. I use PhoneGap + some WebSocket tricks to receive the data stream. It is relatively fast in real time. Try it to feel the power of real-time data.
-
-
-Installation
-=============
-1. A Mac with latest Xcode installed.
-2. An iOS developer account (optional if you only want to test it using simulator)
-3. Run the Tornado Web Server (on port 80) $ sudo python Server/server.py
-4. Run the Collector script $ python simple.py
-5. Build and run the iOS project. Have fun!
-
-
-Note
-=============
-* Some WiFi environment (e.g., MIT campus) blocks the default WebSocket port. That's the reason that I use port 80.
+real-time physiological data. 
 
 -- 
 Jackie Lee
