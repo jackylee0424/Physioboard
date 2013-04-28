@@ -1,19 +1,12 @@
 Physioboard
 ============
-Physioboard (v2) is coming soon.
+
+Physioboard demonstrates prototypes for "real-time" physiological data acquisition and visualization (i.e., skin conductance, heart rate...etc).
 
 
-
-Physioboard (v1) is an iOS universal app (meaning that it works on all iPhone/iPad/iPod touch 
-with iOS 4.3.3 or above). Physioboard demonstrates the possibility of using an iOS 
-device to view "real-time" physiological data (i.e., skin conductance, heart rate...etc).
-I put together a solution using the Python Tornado Web Server (http://www.tornadoweb.org/) with
-its WebSocket to keep the "real-time-ness" of data. On the iOS client side, I use 
-PhoneGap (http://www.phonegap.com/) + some WebSocket hacks to display real-time data. 
-However, this project shows the basic functionality (well, at least, for the real-time data).
-It is still at the prototype stage. I hope this solution can shed some lights on streaming 
-real-time physiological data to iPhone/iPad in order to inspire more usages of
-real-time physiological data. 
+Real-time Skin Conductance Data Visualization (PhoneGap)
+============
+Update: This was an early prototype done in summer 2011 (very out-dated). I put together a solution using the Python Tornado Web Server (http://www.tornadoweb.org/) with its WebSocket to keep the "real-time-ness" of data. On the iOS client side, I use PhoneGap (http://www.phonegap.com/) + some WebSocket hacks to display real-time data. However, this project shows the basic functionality (well, at least, for the real-time data). It is still at the prototype stage. I hope this solution can shed some lights on streaming real-time physiological data to iPhone/iPad in order to encourage more usage scenarios of real-time physiological data. 
 
 -- 
 Jackie Chia-Hsun Lee
