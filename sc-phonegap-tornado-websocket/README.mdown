@@ -2,14 +2,14 @@ Real-time Skin Conductance Data Visualization (PhoneGap)
 ============
 Update: This was an early prototype done in summer 2011 (very out-dated). I put together a solution using the Python Tornado Web Server (http://www.tornadoweb.org/) with its WebSocket to keep the "real-time-ness" of data. On the iOS client side, I use PhoneGap (http://www.phonegap.com/) + some WebSocket hacks to display real-time data. However, this project shows the basic functionality (well, at least, for the real-time data). It is still at the prototype stage. I hope this solution can shed some lights on streaming real-time physiological data to iPhone/iPad in order to encourage more usage scenarios of real-time physiological data. 
 
-[![](https://github.com/jackylee0424/Physioboard/blob/master/sc-phonegap-tornado-websocket/physioboard-screenshot.jpg)](https://github.com/jackylee0424/Physioboard/blob/master/sc-phonegap-tornado-websocket/physioboard-screenshot.jpg)
+[![](https://raw.github.com/jackylee0424/Physioboard/master/sc-phonegap-tornado-websocket/physioboard-screenshot.jpg)](https://raw.github.com/jackylee0424/Physioboard/master/sc-phonegap-tornado-websocket/physioboard-screenshot.jpg)
 
 * This screenshot shows a demo app that displays two simultaneous inputs of data.
 
 
 How it works
 ============
-[![](https://github.com/jackylee0424/Physioboard/blob/master/sc-phonegap-tornado-websocket/physioboard-diagram.jpg)](https://github.com/jackylee0424/Physioboard/blob/master/sc-phonegap-tornado-websocket/physioboard-diagram.jpg)
+[![](https://raw.github.com/jackylee0424/Physioboard/master/sc-phonegap-tornado-websocket/physioboard-diagram.jpg)](https://raw.github.com/jackylee0424/Physioboard/master/sc-phonegap-tornado-websocket/physioboard-diagram.jpg)
 
 Physioboard consists of three major parts:
 
